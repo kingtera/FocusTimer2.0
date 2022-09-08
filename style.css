@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --main-color: hsla(240, 6%, 21%, 1);
+    --bg-buttonSound: hsla(240, 9%, 89%, 1);
+    --buttonSoundOn-color: hsla(194, 97%, 31%, 1);
+    --buttonImageSoundOn-color: white;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    align-items: center;
+    width: 82.1rem;
+}
+
+.timerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--main-color);
+    display: flex;
+    font-size: 10.6rem;
+    gap: 1rem;
+    font-weight: 50rem;
+    text-align: center;
+    line-height: 14.78rem;
+
+    animation: showElement 1.5s;
+}
+
+button {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    transition: transform 200ms;
+    animation: showElement 1.5s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.controlsDisplay {
+    display: flex;
+    gap: 4rem;
+}
+
+.buttonPause svg path{
+    fill: var(--main-color);
+}
+
+.soundsDisplay {
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+}
+
+.soundForest, .soundRain, .soundCafeteria, .soundFireplace {
+    background-color: var(--bg-buttonSound);
+    border-radius: 2.4rem;
+    width: clamp(11rem, 11rem + 3vw,13.8rem);
+    height: 15.2rem;
+}
+
+.hide {
+    display: none;
+}
+
+.buttonSoundSelected {
+    background-color: var(--buttonSoundOn-color);
+}
+
+.svgSelectedPath {
+    fill: white;
+}
+
+@media (min-width: 1024px) {
+    main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 19.2rem;
+        align-items: center;
+        place-content: center;
+        justify-items: center;
+    }
+
+    h1 {
+        font-size: 12.6rem;
+    }
+}
+
+@keyframes showElement {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
